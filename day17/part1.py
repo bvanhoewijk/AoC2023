@@ -35,7 +35,7 @@ while queue:
     
     # Move forward:
     # Length less than 3:
-    if length < 3 and direction != (0, 0):
+    if length < 3 and node != (0, 0):
         new_node = (node[0] + direction[0], node[1] + direction[1])
         if bounds(new_node, maze):
             queue.put((heat + maze[new_node], (new_node), direction, length + 1))

@@ -35,14 +35,14 @@ while queue:
     
     # Move forward:
     # Length less than 10:
-    if length < 10 and direction != (0, 0):
+    if length < 10 and node != (0, 0):
         new_node = (node[0] + direction[0], node[1] + direction[1])
         if bounds(new_node, maze):
             queue.put((heat + maze[new_node], (new_node), direction, length + 1))
 
     # Turn
     # Length of path >= 4 or start
-    if length >= 4 or direction == (0,0):
+    if length >= 4 or node == (0,0):
         for ndr, ndc in directions:
             if (ndr, ndc) != direction and (ndr, ndc) != (-direction[0], -direction[1]):
                 new_node = (node[0] + ndr, node[1] + ndc)
